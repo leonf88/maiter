@@ -18,9 +18,9 @@ struct Sharder : public SharderBase {
   virtual int operator()(const K& k, int shards) = 0;
 };
 
-template <class K, class V, class D>
+template <class K, class V>
 struct Initializer : public InitializerBase {
-  virtual void initTable(TypedGlobalTable<K, V, V, D>* table, int shard_id) = 0;
+  virtual void initDelta(const K& k, V* delta) = 0;
 };
 
 template <class V>
