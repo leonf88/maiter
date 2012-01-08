@@ -1,0 +1,43 @@
+#summary Maiter API
+
+= Introduction =
+
+The following 5 components should be implemented in Maiter. Most of them have default implementations, and they are quite easy to implement after you have figured out what the commutative operator is and what the g_{i,j}(x) function is.
+
+ * `Sharder`
+ * `Initializer`
+ * `Accumulator`
+ * `Updater`
+ * `TermChecker`
+
+= Details =
+
+{{{
+template <class K>
+struct Sharder : public SharderBase {
+  virtual int operator()(const K& k, int shards) = 0;
+};
+
+template <class K, class V, class D>
+struct Initializer : public InitializerBase {
+  virtual void initTable(TypedGlobalTable<K, V, V, D>* table, int shard_id) = 0;
+};
+
+template <class V>
+struct Accumulator : public AccumulatorBase {
+  virtual void accumulate(V* a, const V& b) = 0;
+  virtual V priority(const V& delta, const V& state) = 0;
+};
+
+template <class K, class V, class D>
+struct Sender : public SenderBase {
+  virtual void send(const V& delta, const D& data, vector<pair<K, V> >* output) = 0;
+  virtual const V& reset() const = 0;
+};
+
+template <class K, class V>
+struct TermChecker : public TermCheckerBase {
+    virtual double local_report(LocalTableIterator<K, V>* statetable_itr) = 0;
+    virtual bool terminate(vector<double> local_reports) = 0;
+};
+}}}
