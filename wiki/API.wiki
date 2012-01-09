@@ -7,7 +7,7 @@ The following 5 components should be implemented in Maiter. Most of them have de
  * `Sharder`
  * `Initializer`
  * `Accumulator`
- * `Updater`
+ * `Sender`
  * `TermChecker`
 
 = Details =
