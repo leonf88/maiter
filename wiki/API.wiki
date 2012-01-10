@@ -2,7 +2,7 @@
 
 = Introduction =
 
-The following 5 components should be implemented in Maiter. Most of them have default implementations, and they are quite easy to implement after you have figured out what the commutative operator is and what the g_{i,j}(x) function is.
+The following 3 components should be implemented in Maiter. They are quite easy to implement after you have figured out what the commutative operator is and what the g_{i,j}(x) function is.
 
  * `Sharder`
  * `IterateKernel`
