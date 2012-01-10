@@ -13,17 +13,17 @@ The following 3 components should be implemented in Maiter. They are quite easy 
 {{{
 template <class K>
 struct Sharder : public SharderBase {
-  virtual int operator()(const K& k, int shards) = 0;
+    virtual int operator()(const K& k, int shards) = 0;
 };
 
 template <class K, class V, class D>
 struct IterateKernel : public IterateKernelBase {
-  virtual void read_data(string& line, K* k, D* data) = 0;
-  virtual void init_c(const K& k, V* delta) = 0;
-  virtual const V& default_v() const = 0;
-  virtual void accumulate(V* a, const V& b) = 0;
-  virtual void priority(V* pri, const V& value, const V& delta) = 0;
-  virtual void g_func(const V& delta, const D& data, vector<pair<K, V> >* output) = 0;
+    virtual void read_data(string& line, K* k, D* data) = 0;
+    virtual void init_c(const K& k, V* delta) = 0;
+    virtual const V& default_v() const = 0;
+    virtual void accumulate(V* a, const V& b) = 0;
+    virtual void priority(V* pri, const V& value, const V& delta) = 0;
+    virtual void g_func(const V& delta, const D& data, vector<pair<K, V> >* output) = 0;
 };
 
 template <class K, class V>
@@ -70,29 +70,29 @@ struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
     }
 
     void init_c(const int& k, float* delta){
-            float init_delta = 0.2;
-            *delta = init_delta;
+        float init_delta = 0.2;
+        *delta = init_delta;
     }
 
     void accumulate(float* a, const float& b){
-            *a = *a + b;
+        *a = *a + b;
     }
 
     void priority(float* pri, const float& value, const float& delta){
-            *pri = delta;
+        *pri = delta;
     }
 
     void g_func(const float& delta, const vector<int>& data, vector<pair<int, float> >* output){
-            int size = (int) data.size();
-            float outv = delta * 0.8 / size;
-            for(vector<int>::const_iterator it=data.begin(); it!=data.end(); it++){
-                    int target = *it;
-                    output->push_back(make_pair(target, outv));
-            }
+        int size = (int) data.size();
+        float outv = delta * 0.8 / size;
+        for(vector<int>::const_iterator it=data.begin(); it!=data.end(); it++){
+                int target = *it;
+                output->push_back(make_pair(target, outv));
+        }
     }
 
     const float& default_v() const {
-            return zero;
+        return zero;
     }
 };
 
