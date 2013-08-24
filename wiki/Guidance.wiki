@@ -10,30 +10,30 @@ Maiter is C++ framework, therefore to build and use Maiter, you will need a mini
  * gcc/g++ (> 4)
  * protocol buffers
 If available, the following libraries will be used:
-* Python development headers; SWIG
-* TCMalloc
-* google-perftools
+ * Python development headers; SWIG
+ * TCMalloc
+ * google-perftools
 In addition to these, Maiter comes with several support libraries which are compiled as part of the build process; these are:
-* google-flags
-* google-logging
+ * google-flags
+ * google-logging
 On debian/ubuntu, the required libraries can be acquired by running:
-* sudo apt-get install
-* build-essential
-* cmake
-* g++
-* libboost-dev
-* libboost-python-dev
-* libboost-thread-dev
-* liblzo2-dev
-* libnuma-dev
-* libopenmpi-dev
-* libprotobuf-dev 
-* libcr-dev
-* libibverbs-dev
-* openmpi-bin
-* protobuf-compiler
+ * sudo apt-get install
+ * build-essential
+ * cmake
+ * g++
+ * libboost-dev
+ * libboost-python-dev
+ * libboost-thread-dev
+ * liblzo2-dev
+ * libnuma-dev
+ * libopenmpi-dev
+ * libprotobuf-dev 
+ * libcr-dev
+ * libibverbs-dev
+ * openmpi-bin
+ * protobuf-compiler
 the optional libraries can be install via:
-* sudo apt-get install libgoogle-perftools-dev python-dev swig
+ * sudo apt-get install libgoogle-perftools-dev python-dev swig
 
 
 ==*2. Building*==
@@ -207,7 +207,7 @@ new TermCheckers<int, float>::Diff // Setting the manner of stopping the task. Y
 // stating the task
 REGISTER_RUNNER(Pagerank); // Setting the parameter RUNNER in .sh file
 }}}
-   *Secondly,* name your code file **.cc, for example, PageRank.cc and put PagRank.cc into src/examples/ directory of Maiter project. Then you need to modify the CMAKELIST.TXT file in src/examples/ directory. Note that , you must turn the rest .cc file into annotations, because Maiter only can compile one .cc file at the same time.
+*Secondly,* name your code file **.cc, for example, PageRank.cc and put PagRank.cc into src/examples/ directory of Maiter project. Then you need to modify the CMAKELIST.TXT file in src/examples/ directory. Note that , you must turn the rest .cc file into annotations, because Maiter only can compile one .cc file at the same time.
 {{{
 set(EXAMPLE_LIBS 
 	${EXAMPLE_LIBS} 
@@ -233,4 +233,4 @@ target_link_libraries(example-dsm -Wl,-whole-archive common worker kernel master
 target_link_libraries(example-dsm gflags glog webgraph)
 target_link_libraries(example-dsm ${EXAMPLE_LIBS})
 }}}
-   *Finally*, run 'make' from the top level Maiter directory. The example-dsm in bin/release/examples/ directory is the executable PageRank. Then posting it to all the workers in your cluster and running your ,sh file after input file is ready, you will get results quickly.
+*Finally*, run 'make' from the top level Maiter directory. The example-dsm in bin/release/examples/ directory is the executable PageRank. Then posting it to all the workers in your cluster and running your ,sh file after input file is ready, you will get results quickly.
