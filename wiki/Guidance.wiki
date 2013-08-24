@@ -206,9 +206,9 @@ new TermCheckers<int, float>::Diff // Setting the manner of stopping the task. Y
 *}*
 // stating the task
 REGISTER_RUNNER(Pagerank); // Setting the parameter RUNNER in .sh file
-
+}}}
    *Secondly,* name your code file **.cc, for example, PageRank.cc and put PagRank.cc into src/examples/ directory of Maiter project. Then you need to modify the CMAKELIST.TXT file in src/examples/ directory. Note that , you must turn the rest .cc file into annotations, because Maiter only can compile one .cc file at the same time.
-
+{{{
 set(EXAMPLE_LIBS 
 	${EXAMPLE_LIBS} 
 	${MPI_LIBS}
