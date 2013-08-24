@@ -64,16 +64,16 @@ PORTION=1
 ./exsmple-dsm --runner=$ALGORITHM --workers=$WORKERS --graph_dir=$GRAPH --result_dir=$RESULT --num_nodes=$NODES --snapshot_interval=$SNAPSHOT --portion=$PORTION --termcheck_threshold=$TERMTHRESH --bufmsg=$BUFMSG --v=1 > log
 }}}
    In the .sh file, there are many parameters which have specific meanings:
-   ALGORITHM is the name of algorithm and must be exactly the same with the name you set when implementing the algorithm.
-WORKERS is the sum of the values of slots in the conf/mpi-cluster file.
-GRAPH is the relative path of the input file like graph.
-RESULT is the relative path of results of the algorithm you run.
-NODES is the number of the statetable previsioned in memory before run a task and depends on the number of nodes in the input graph. For example, supposed that there are 1000 nodes in your input graph, the NODES must be bigger than 1000. Therefore, it would be 1500.
-SNAPSHOT is the time interval (in seconds) between two snapshots. 
-TERMTHRESH is a float number and can be any values which depend on the implementation of terminate API of Maiter.
-BUFMSG is the size of buffer which caches information to be sent by workers.
+ * ALGORITHM is the name of algorithm and must be exactly the same with the name you set when implementing the algorithm.
+ * WORKERS is the sum of the values of slots in the conf/mpi-cluster file.
+ * GRAPH is the relative path of the input file like graph.
+ * RESULT is the relative path of results of the algorithm you run.
+ * NODES is the number of the statetable previsioned in memory before run a task and depends on the number of nodes in the input graph. For example, supposed that there are 1000 nodes in your input graph, the NODES must be bigger than 1000. Therefore, it would be 1500.
+ * SNAPSHOT is the time interval (in seconds) between two snapshots. 
+ * TERMTHRESH is a float number and can be any values which depend on the implementation of terminate API of Maiter.
+ * BUFMSG is the size of buffer which caches information to be sent by workers.
 PORTION determines that how many statetables are preferentially updated. It ranges from 0 to 1. For example, if the PORTION is 0.2, Maiter will preferentially update 20 percent of statetables which have higher priority.  
-   *Finally,* you must put the example-dsm, .sh file, input (note that the name of input file in input directory must be ‘part0’ ) and result directory in the same directory. Then entering the command ‘sh **.sh’, you will get output in the result directory.
+*Finally,* you must put the example-dsm, .sh file, input (note that the name of input file in input directory must be ‘part0’ ) and result directory in the same directory. Then entering the command ‘sh **.sh’, you will get output in the result directory.
  
 Figure 1
 
