@@ -4,12 +4,11 @@
 If you don’t want to run a big task, you just intend to run a simple example like PageRank to have a try or learn how to use Maiter. You don’t need to set up Maiter on big cluster. Setting up Maiter on single machine will save a lot of time. According to the following steps, you can run Maiter on single machine easily.
 ==*1. prerequisites*==
 Maiter is C++ framework, therefore to build and use Maiter, you will need a minimum of the following:
-
-* CMake (> 2.6)
-* OpenMPI
-* Python (2.*)
-* gcc/g++ (> 4)
-* protocol buffers
+ * CMake (> 2.6)
+ * OpenMPI
+ * Python (2.*)
+ * gcc/g++ (> 4)
+ * protocol buffers
 If available, the following libraries will be used:
 * Python development headers; SWIG
 * TCMalloc
