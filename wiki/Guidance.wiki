@@ -220,7 +220,7 @@ add_library(example
             #con_component.cc
             #simrank.cc
             #sim.cc
-            *PageRank.cc*
+            PageRank.cc
             #shortestpath.cc
             #adsorption.cc
             #katz.cc
