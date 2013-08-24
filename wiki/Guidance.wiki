@@ -233,4 +233,4 @@ target_link_libraries(example-dsm -Wl,-whole-archive common worker kernel master
 target_link_libraries(example-dsm gflags glog webgraph)
 target_link_libraries(example-dsm ${EXAMPLE_LIBS})
 }}}
-   *Finally,* run 'make' from the top level Maiter directory. The example-dsm in bin/release/examples/ directory is the executable PageRank. Then posting it to all the workers in your cluster and running your ,sh file after input file is ready, you will get results quickly.
+   * Finally,* run 'make' from the top level Maiter directory. The example-dsm in bin/release/examples/ directory is the executable PageRank. Then posting it to all the workers in your cluster and running your ,sh file after input file is ready, you will get results quickly.
