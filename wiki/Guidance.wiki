@@ -4,36 +4,36 @@
 If you don’t want to run a big task, you just intend to run a simple example like PageRank to have a try or learn how to use Maiter. You don’t need to set up Maiter on big cluster. Setting up Maiter on single machine will save a lot of time. According to the following steps, you can run Maiter on single machine easily.
 ==*1. prerequisites*==
 Maiter is C++ framework, therefore to build and use Maiter, you will need a minimum of the following:
-*CMake (> 2.6)
-*OpenMPI
-*Python (2.*)
-*gcc/g++ (> 4)
-*protocol buffers
+* CMake (> 2.6)
+* OpenMPI
+* Python (2.*)
+* gcc/g++ (> 4)
+* protocol buffers
 If available, the following libraries will be used:
-*Python development headers; SWIG
-*TCMalloc
-*google-perftools
+* Python development headers; SWIG
+* TCMalloc
+* google-perftools
 In addition to these, Maiter comes with several support libraries which are compiled as part of the build process; these are:
-*google-flags
-*google-logging
+* google-flags
+* google-logging
 On debian/ubuntu, the required libraries can be acquired by running:
-*sudo apt-get install
-*build-essential
-*cmake
-*g++
-*libboost-dev
-*libboost-python-dev
-*libboost-thread-dev
-*liblzo2-dev
-*libnuma-dev
-*libopenmpi-dev
-*libprotobuf-dev 
-*libcr-dev
-*libibverbs-dev
-*openmpi-bin
-*protobuf-compiler
+* sudo apt-get install
+* build-essential
+* cmake
+* g++
+* libboost-dev
+* libboost-python-dev
+* libboost-thread-dev
+* liblzo2-dev
+* libnuma-dev
+* libopenmpi-dev
+* libprotobuf-dev 
+* libcr-dev
+* libibverbs-dev
+* openmpi-bin
+* protobuf-compiler
 the optional libraries can be install via:
-*sudo apt-get install libgoogle-perftools-dev python-dev swig
+* sudo apt-get install libgoogle-perftools-dev python-dev swig
 
 
 ==*2. Building*==
@@ -233,4 +233,4 @@ target_link_libraries(example-dsm -Wl,-whole-archive common worker kernel master
 target_link_libraries(example-dsm gflags glog webgraph)
 target_link_libraries(example-dsm ${EXAMPLE_LIBS})
 }}}
-   *Finally,* run 'make' from the top level Maiter directory. The example-dsm in bin/release/examples/ directory is the executable PageRank. Then posting it to all the workers in your cluster and running your ,sh file after input file is ready, you will get results quickly.
+   *Finally*, run 'make' from the top level Maiter directory. The example-dsm in bin/release/examples/ directory is the executable PageRank. Then posting it to all the workers in your cluster and running your ,sh file after input file is ready, you will get results quickly.
