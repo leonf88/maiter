@@ -37,7 +37,7 @@ the optional libraries can be install via:
 
 ==*2. Building*==
 To build, simply run 'make' from the top level Maiter directory.
-http://fmn.rrimg.com/fmn058/20130902/2120/original_IFoY_71a000007587125d.jpg
+[http://fmn.rrimg.com/fmn058/20130902/2120/original_IFoY_71a000007587125d.jpg]
 A successful building will show below in the end:
 http://fmn.rrimg.com/fmn064/20130902/2120/original_qBnZ_09bf00007e491190.jpg
 A successful build should generate an executable example case named example-dsm which is PageRank in default situation in the bin/release/examples/ of Maiter project.
