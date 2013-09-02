@@ -37,6 +37,7 @@ the optional libraries can be install via:
 
 ==*2. Building*==
 To build, simply run 'make' from the top level Maiter directory.
+
 [http://fmn.rrimg.com/fmn058/20130902/2120/original_IFoY_71a000007587125d.jpg]
 A successful building will show below in the end:
 http://fmn.rrimg.com/fmn064/20130902/2120/original_qBnZ_09bf00007e491190.jpg
@@ -74,10 +75,10 @@ PORTION=1
  * PORTION determines that how many statetables are preferentially updated. It ranges from 0 to 1. For example, if the PORTION is 0.2, Maiter will preferentially update 20 percent of statetables which have higher priority. 
  
 *Finally,* you must put the example-dsm, .sh file, input (note that the name of input file in input directory must be ‘part0’ ) and result directory in the same directory. Then entering the command ‘sh **.sh’, you will get output in the result directory.
+
 http://fmn.rrimg.com/fmn062/20130902/2120/original_9Z55_6bcb00007e2d1191.jpg
 
 Figure 1
-
 
 =*How can I run Maiter on a cluster?*= 
 If you want to run a big task on Maiter, single machine cluster will be not enough. But, setting up Maiter on single machine with easy, will make you bring you a lot of convenience, because there are many similarities between single machine cluster and multiple machines cluster.
@@ -109,6 +110,7 @@ PORTION=1
 ./exsmple-dsm --runner=$ALGORITHM --workers=$WORKERS --graph_dir=$GRAPH --result_dir=$RESULT --num_nodes=$NODES --snapshot_interval=$SNAPSHOT --portion=$PORTION --termcheck_threshold=$TERMTHRESH --bufmsg=$BUFMSG --v=1 > log
 }}}
 *Thirdly,* you must preprocess your input file. At present, Maiter has no distributed file system to save and split input file. Therefore, to begin your task, you must split the input file into corresponding parts with hash function which must be the same with the hash function you set in implementation of your task (it is key mod WORKS-1 in default situation). The number of parts depends on the WORKS parameter in your .sh file. It is WORKS-1. For example, WORKS is 9 in above .sh file. The process of splitting input file be shown in figure 2.
+
  http://fmn.rrimg.com/fmn061/20130902/2120/original_0V3g_0af300007e0a1190.jpg
 
 Figure 2
