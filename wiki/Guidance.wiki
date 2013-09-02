@@ -1,5 +1,5 @@
 #summary How to use Maiter
-
+[http://b163.photo.store.qq.com/psb?/V13n02cA00tqbY/sqPdA2PBiEwMNPR2vnvlcT9EEERvP7Hy9xrxtexDWfw!/b/dKKRMmE*LgAA&bo=gAJVAwAAAAABAPM!]
 =*How can I run Maiter on single machine? *=
 If you don’t want to run a big task, you just intend to run a simple example like PageRank to have a try or learn how to use Maiter. You don’t need to set up Maiter on big cluster. Setting up Maiter on single machine will save a lot of time. According to the following steps, you can run Maiter on single machine easily.
 ==*1. prerequisites*==
