@@ -39,8 +39,11 @@ the optional libraries can be install via:
 To build, simply run 'make' from the top level Maiter directory.
 
 [http://fmn.rrimg.com/fmn058/20130902/2120/original_IFoY_71a000007587125d.jpg]
+
 A successful building will show below in the end:
+
 http://fmn.rrimg.com/fmn064/20130902/2120/original_qBnZ_09bf00007e491190.jpg
+
 A successful build should generate an executable example case named example-dsm which is PageRank in default situation in the bin/release/examples/ of Maiter project.
 ==*3. Running*==
 *Firstly, * to execute the default example (it is PageRank in default situation) generated after building, you will need to modify conf/mpi-cluster to point to your machine Maiter will be executed on - for example, the file might look like:
@@ -111,9 +114,9 @@ PORTION=1
 }}}
 *Thirdly,* you must preprocess your input file. At present, Maiter has no distributed file system to save and split input file. Therefore, to begin your task, you must split the input file into corresponding parts with hash function which must be the same with the hash function you set in implementation of your task (it is key mod WORKS-1 in default situation). The number of parts depends on the WORKS parameter in your .sh file. It is WORKS-1. For example, WORKS is 9 in above .sh file. The process of splitting input file be shown in figure 2.
 
- http://fmn.rrimg.com/fmn061/20130902/2120/original_0V3g_0af300007e0a1190.jpg
+http://fmn.rrimg.com/fmn061/20130902/2120/original_0V3g_0af300007e0a1190.jpg
 
-Figure 2
+ Figure 2
 
 In figure 1.2, you should pay attention to the name of every part. If the hash value of key in a part is x, the name of the part must be partx. After splitting, you have to past these parts to corresponding worker, then putting them in the input directory. Because a worker can run two Maiter tasks at the same time, every worker should has two parts of input file. Shown in figure 3 is how to place the example-dsm, parts, input and result directory.
  http://fmn.rrimg.com/fmn059/20130902/2120/original_Cepn_0c5300007e29118f.jpg
