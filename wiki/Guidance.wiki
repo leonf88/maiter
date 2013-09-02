@@ -37,9 +37,9 @@ the optional libraries can be install via:
 
 ==*2. Building*==
 To build, simply run 'make' from the top level Maiter directory.
- http://fmn.rrimg.com/fmn058/20130902/2120/original_IFoY_71a000007587125d.jpg
+http://fmn.rrimg.com/fmn058/20130902/2120/original_IFoY_71a000007587125d.jpg
 A successful building will show below in the end:
- http://fmn.rrimg.com/fmn064/20130902/2120/original_qBnZ_09bf00007e491190.jpg
+http://fmn.rrimg.com/fmn064/20130902/2120/original_qBnZ_09bf00007e491190.jpg
 A successful build should generate an executable example case named example-dsm which is PageRank in default situation in the bin/release/examples/ of Maiter project.
 ==*3. Running*==
 *Firstly, * to execute the default example (it is PageRank in default situation) generated after building, you will need to modify conf/mpi-cluster to point to your machine Maiter will be executed on - for example, the file might look like:
@@ -74,11 +74,12 @@ PORTION=1
  * PORTION determines that how many statetables are preferentially updated. It ranges from 0 to 1. For example, if the PORTION is 0.2, Maiter will preferentially update 20 percent of statetables which have higher priority. 
  
 *Finally,* you must put the example-dsm, .sh file, input (note that the name of input file in input directory must be ‘part0’ ) and result directory in the same directory. Then entering the command ‘sh **.sh’, you will get output in the result directory.
- http://fmn.rrimg.com/fmn062/20130902/2120/original_9Z55_6bcb00007e2d1191.jpg
+http://fmn.rrimg.com/fmn062/20130902/2120/original_9Z55_6bcb00007e2d1191.jpg
+
 Figure 1
 
 
-=*How can I run Maiter on a cluster*= 
+=*How can I run Maiter on a cluster?*= 
 If you want to run a big task on Maiter, single machine cluster will be not enough. But, setting up Maiter on single machine with easy, will make you bring you a lot of convenience, because there are many similarities between single machine cluster and multiple machines cluster.
 ==*1. Prerequisites*==
 It is similar with the first step of single machine cluster, but you must do this step on every machine in cluster.
@@ -109,7 +110,9 @@ PORTION=1
 }}}
 *Thirdly,* you must preprocess your input file. At present, Maiter has no distributed file system to save and split input file. Therefore, to begin your task, you must split the input file into corresponding parts with hash function which must be the same with the hash function you set in implementation of your task (it is key mod WORKS-1 in default situation). The number of parts depends on the WORKS parameter in your .sh file. It is WORKS-1. For example, WORKS is 9 in above .sh file. The process of splitting input file be shown in figure 2.
  http://fmn.rrimg.com/fmn061/20130902/2120/original_0V3g_0af300007e0a1190.jpg
+
 Figure 2
+
 In figure 1.2, you should pay attention to the name of every part. If the hash value of key in a part is x, the name of the part must be partx. After splitting, you have to past these parts to corresponding worker, then putting them in the input directory. Because a worker can run two Maiter tasks at the same time, every worker should has two parts of input file. Shown in figure 3 is how to place the example-dsm, parts, input and result directory.
  http://fmn.rrimg.com/fmn059/20130902/2120/original_Cepn_0c5300007e29118f.jpg
 Figure 3
@@ -121,6 +124,7 @@ In figure 1.3, you should note that part0 and part1 must be placed in worker0 , 
 Actually, the running process of Maiter include there steps. In the first step, Maiter read the input file to initialize statetables on every worker, preparing for computing in nest step. After all statetables of workers have been initialized, Maiter start the second step, iteratively computing to get results with input file until the results meet specific precision. In the third step, Maiter dumps the results on disks of workers. This is the end of your task. The running process is shown in figure 4.
   
 http://fmn.rrimg.com/fmn063/20130902/2120/original_wDhp_45b400007e12118e.jpg
+
   Figure 4
 
 Maiter can finish the third step without your interference. Therefore, you only need to finish the former two steps with the API provided by Maiter. Take PageRank for example. The C++ code of PageRank in Maiter programming model is shown below:
