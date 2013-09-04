@@ -146,8 +146,8 @@ DECLARE_double(portion);
 //These are google flag functions. They turn some variables Maiter require such as result //directory into command line arguments to make running tasks convenient.
 struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
     float zero;
-*PagerankIterateKernel()* : zero(0){} // constructor of PagerankIterateKernel
-    *void read_data(string& line, int& k, vector<int>& data){ *
+PagerankIterateKernel() : zero(0){} // constructor of PagerankIterateKernel
+    *void read_data(string& line, int& k, vector<int>& data){ 
         string linestr(line);
         int pos = linestr.find("\t");
         if(pos == -1) return;
@@ -167,26 +167,26 @@ struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
         }
         k = source;
         data = linkvec;
-    *}*
+    }
 // read_data function initializes domain data of statetable, corresponding to operation 4 // in figure 4
-    *void init_c(const int& k, float& delta,vector<int>& data){ *
+    void init_c(const int& k, float& delta,vector<int>& data){ 
             float init_delta = 0.2;
             delta = init_delta;
-    *}*
+   }
 // init_c function initializes domain Δv of statetable，corresponding to operation 2 in //figure 4
-*void init_v(const int& k,float& v,vector<int>& data){ *
+   void init_v(const int& k,float& v,vector<int>& data){ 
         v=0;
-*}*
+}
 // init_v function initializes domain v of statetable，corresponding to operation 1 
-    *void accumulate(float& a, const float& b){ *
+    void accumulate(float& a, const float& b){ 
             a = a + b;
-    *}*
+    }
 // accumulate function informs Maiter the manner of accumulation in the operation 7 //and operation 8 in figure 4
     *void priority(float& pri, const float& value, const float& delta){ *
             pri = delta;
-    *}*
+    }
 // init_v function initializes domain pri of statetable，corresponding to operation 3
-    *void g_func(const int& k,const float& delta, const float&value, const vector<int>& data, vector<pair<int, float> >* output){ *
+     void g_func(const int& k,const float& delta, const float&value, const vector<int>& data, vector<pair<int, float> >* output){ 
             int size = (int) data.size();
             float outv = delta * 0.8 / size;
             for(vector<int>::const_iterator it=data.begin(); it!=data.end(); it++){
@@ -197,10 +197,10 @@ struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
     const float& default_v() const {
             return zero;
     }
-*};*
+};
 // g_func function computes messages to be sent with the data in domain data and then // sends these massages to adjacent nodes, corresponding to the operation 9
-*static int Pagerank(ConfigData& conf) {*
-MaiterKernel<int, float, vector<int> >* kernel = new MaiterKernel<int, float, vector<int> >* (*
+static int Pagerank(ConfigData& conf) {
+MaiterKernel<int, float, vector<int> >* kernel = new MaiterKernel<int, float, vector<int> > (
 conf, // It is conf/map_cluster in default situation. You don’t need to change it.
 FLAGS_num_nodes, 
 FLAGS_portion,
@@ -208,7 +208,7 @@ FLAGS_result_dir,
 new Sharding::Mod,// Setting the hash function used to find corresponding statetable on // worker with a key. You can redefined it. 
 new PagerankIterateKernel,
 new TermCheckers<int, float>::Diff // Setting the manner of stopping the task. You can //redefined it with API terminate and estimate_prog.
-*);*
+);
     kernel->registerMaiter();
     if (!StartWorker(conf)) {
         Master m(conf);
@@ -216,7 +216,7 @@ new TermCheckers<int, float>::Diff // Setting the manner of stopping the task. Y
     }
     delete kernel;
     return 0;
-*}*
+}
 // stating the task
 REGISTER_RUNNER(Pagerank); // Setting the parameter RUNNER in .sh file
 }}}
