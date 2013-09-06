@@ -1,10 +1,10 @@
 #summary How to use Maiter
-[[#anchor1|fdggg]]
+[ [#anchor1|fdggg] ]
  * Guigance
    # [[How_can_I_run_Maiter_on_single_machine]]
    # How can I run Maiter ou cluster
    # How can i program on Maiter
- <<Anchor(anchor1)>>
+ < <Anchor(anchor1)> >
 =*[How_can_I_run_Maiter_on_single_machine#How_can_I_run_Maiter_on_single_machine?] *=
 If you don’t want to run a big task, you just intend to run a simple example like PageRank to have a try or learn how to use Maiter. You don’t need to set up Maiter on big cluster. Setting up Maiter on single machine will save a lot of time. According to the following steps, you can run Maiter on single machine easily.
 ==*1. prerequisites*==
