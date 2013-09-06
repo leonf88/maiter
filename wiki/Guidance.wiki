@@ -1,6 +1,6 @@
 #summary How to use Maiter
  * Guigance
-   # [[How can I run Maiter on single machine]]
+   # [[How_can_I_run_Maiter_on_single_machine]]
    # How can I run Maiter ou cluster
    # How can i program on Maiter
  
