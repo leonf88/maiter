@@ -1,1 +1,1 @@
-<a href="www.baidu.com">W3School</a>
+<a href="http://www.baidu.com">W3School</a>
