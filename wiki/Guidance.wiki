@@ -88,7 +88,7 @@ http://fmn.rrimg.com/fmn062/20130902/2120/original_9Z55_6bcb00007e2d1191.jpg
 
 Figure 1
 
-=*Running Maiter on a cluster?*= 
+=*Running Maiter on a cluster*= 
 If you want to run a big task on Maiter, single machine cluster will be not enough. But, setting up Maiter on single machine with easy, will make you bring you a lot of convenience, because there are many similarities between single machine cluster and multiple machines cluster.
 ==*1. Prerequisites*==
 It is similar with the first step of single machine cluster, but you must do this step on every machine in cluster.
