@@ -1,6 +1,7 @@
 #summary How to use Maiter
  =* *Guigance*=
-   # [ Running_Maiter_on_single_machine # Running_Maiter_on_single_machine ]
+   # <a href="http://code.google.com/p/maiter/wiki/Guidance#Running_Maiter_on_single_machine">W3School</a>
+   # Running_Maiter_on_single_machine # Running_Maiter_on_single_machine ]
    # [ Running_Maiter_on_cluster ]
    # [ Programing_on_Maiter]
 
