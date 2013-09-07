@@ -1,18 +1,5 @@
-<a id="biaoti"></a>
+[ wang ]
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="#biaoti">回到标题</a>
