@@ -1,6 +1,6 @@
 #summary How to use Maiter
  =* *Guigance*=
-   # [ Running Maiter on single machine | Running Maiter on single machine ]
+   # [ Running Maiter on single machine|Running Maiter on single machine ]
    # [ Running_Maiter_on_cluster ]
    # [ Programing_on_Maiter]
 
