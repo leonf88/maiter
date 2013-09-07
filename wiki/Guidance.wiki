@@ -1,12 +1,11 @@
 #summary How to use Maiter
- <a href="#a1">
- * Guigance
-   # [ How_can_I_run_Maiter_on_single_machine ]
-   # How can I run Maiter ou cluster
-   # How can i program on Maiter
+ * *Guigance*
+   # [ Running_Maiter_on_single_machine ]
+   # [ Running_Maiter_on_cluster ]
+   # [ Programing_on_Maiter]
 <Anchor(anchor1)>
  <a name="a1"></a>
-=*[How_can_I_run_Maiter_on_single_machine#How_can_I_run_Maiter_on_single_machine?] *=
+=*Running_Maiter_on_single_machine? *=
 If you don’t want to run a big task, you just intend to run a simple example like PageRank to have a try or learn how to use Maiter. You don’t need to set up Maiter on big cluster. Setting up Maiter on single machine will save a lot of time. According to the following steps, you can run Maiter on single machine easily.
 ==*1. prerequisites*==
 Maiter is C++ framework, therefore to build and use Maiter, you will need a minimum of the following:
@@ -90,7 +89,7 @@ http://fmn.rrimg.com/fmn062/20130902/2120/original_9Z55_6bcb00007e2d1191.jpg
 
 Figure 1
 
-=*How can I run Maiter on a cluster?*= 
+=*Running Maiter on a cluster?*= 
 If you want to run a big task on Maiter, single machine cluster will be not enough. But, setting up Maiter on single machine with easy, will make you bring you a lot of convenience, because there are many similarities between single machine cluster and multiple machines cluster.
 ==*1. Prerequisites*==
 It is similar with the first step of single machine cluster, but you must do this step on every machine in cluster.
@@ -134,7 +133,7 @@ In figure 1.2, you should pay attention to the name of every part. If the hash v
 In figure 1.3, you should note that part0 and part1 must be placed in worker0 , part2 and part3 must be placed in worker1 and so on. The second line in cong/map-cluster is worker0, the third line is worker1. The rest can be done in the same manner. Besides, you have to put the executable example-dsm, Maiter project, input and result in a directory which is the same on all machines in your cluster.
 *Finaly,* running the .sh file on master (192.168.0.1), you can get a part of the end result in the result directory on a worker. Then collecting the part on every worker, you will get the final result.
 
-=*How to program on Maiter?*=
+=*Programing on Maiter?*=
 *Firstly,* program your **.cc file. Before programing on Maiter, you should understand well how Maiter works. You can read the paper on google code of Maiter for detail. 
 Actually, the running process of Maiter include there steps. In the first step, Maiter read the input file to initialize statetables on every worker, preparing for computing in nest step. After all statetables of workers have been initialized, Maiter start the second step, iteratively computing to get results with input file until the results meet specific precision. In the third step, Maiter dumps the results on disks of workers. This is the end of your task. The running process is shown in figure 4.
   
