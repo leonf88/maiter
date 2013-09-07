@@ -8,4 +8,4 @@
 
 
 
-<p id="jump1">页内跳转演示1——任意标签id="jump1"</a>
+<a name="jump2">页内跳转演示1——A标签name="jump2"</a>
