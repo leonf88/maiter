@@ -1,11 +1,2 @@
 <a href="#jump1">W3School</a>
 
-
-
-
-
-
-
-
-
-<a name="jump2">页内跳转演示1——A标签name="jump2"</a>
