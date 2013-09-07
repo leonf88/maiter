@@ -1,5 +1,5 @@
 #summary How to use Maiter
-[ #anchor1|fdggg ]
+[ #anchor1 | fdggg ]
  <a href="#a1">
  * Guigance
    # [[How_can_I_run_Maiter_on_single_machine]]
