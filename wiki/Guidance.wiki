@@ -32,6 +32,7 @@ On debian/ubuntu, the required libraries can be acquired by running:
  * libboost-thread-dev
  * liblzo2-dev
  * libnuma-dev
+ * libblas-dev
  * libopenmpi-dev
  * libprotobuf-dev 
  * libcr-dev
