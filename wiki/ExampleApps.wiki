@@ -7,8 +7,6 @@
 
 
 using namespace dsm;
-
-//DECLARE_string(graph_dir);
 DECLARE_string(result_dir);
 DECLARE_int64(num_nodes);
 DECLARE_double(portion);
@@ -27,7 +25,6 @@ struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
 
         vector<int> linkvec;
         string links = linestr.substr(pos+1);
-        //cout<<"links:"<<links<<endl;
         if(*links.end()!=' '){
             links=links+" ";
         }
@@ -36,7 +33,6 @@ struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
             int to;
             if(spacepos > 0){
                 to = boost::lexical_cast<int>(links.substr(0, spacepos));
-                //cout<<"to:"<<to<<endl;
             }
             links = links.substr(spacepos+1);
             linkvec.push_back(to);
@@ -65,12 +61,9 @@ struct PagerankIterateKernel : public IterateKernel<int, float, vector<int> > {
     void g_func(const int& k,const float& delta, const float&value, const vector<int>& data, vector<pair<int, float> >* output){
             int size = (int) data.size();
             float outv = delta * 0.8 / size;
-            
-            //cout << "size " << size << endl;
             for(vector<int>::const_iterator it=data.begin(); it!=data.end(); it++){
                     int target = *it;
                     output->push_back(make_pair(target, outv));
-                    cout << k<<"  "<<target<< "   "<<outv<<endl;
             }
     }
 
