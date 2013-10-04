@@ -36,5 +36,5 @@ struct TermChecker : public TermCheckerBase {
     virtual bool terminate(vector<double> local_reports) = 0;
 };
 }}}
-
+For more usage detail of Maiter API, please refer to 
 <a href="http://code.google.com/p/maiter/wiki/Guidance#Implementation_of">Implementation of PageRank</a>
