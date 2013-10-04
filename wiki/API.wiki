@@ -36,3 +36,5 @@ struct TermChecker : public TermCheckerBase {
     virtual bool terminate(vector<double> local_reports) = 0;
 };
 }}}
+
+ <font size=4>For more usage details, please refer to the [Implementation of PageRank]</font>.
