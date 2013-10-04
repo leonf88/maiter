@@ -37,4 +37,4 @@ struct TermChecker : public TermCheckerBase {
 };
 }}}
 
- <font size=4>For more usage details, please refer to the [Implementation of PageRank]</font>.
+<a href="http://code.google.com/p/maiter/wiki/Guidance#Implementation_of">Implementation of PageRank</a>
