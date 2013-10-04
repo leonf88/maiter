@@ -19,14 +19,14 @@ struct Sharder : public SharderBase {
 template <class K, class V, class D>
 struct IterateKernel : public IterateKernelBase {
 
-  virtual void read_data(string& line, K& k, D& data) = 0;
-  virtual void init_c(const K& k, V& delta,D& data) = 0;
-  virtual const V& default_v() const = 0;
-  virtual void init_v(const K& k, V& v, D& data) = 0;
-  virtual void accumulate(V& a, const V& b) = 0;
-  virtual void process_delta_v(const K& k, V& dalta,V& value, D& data){} 
-  virtual void priority(V& pri, const V& value, const V& delta) = 0;
-  virtual void g_func(const K& k,const V& delta,const V& value, const D& data, vector<pair<K, V> >* output) = 0;
+  virtual void read_data(string& line, K& k, D& data) = 0;//Initailizing the data domain ofstatetable
+  virtual void init_c(const K& k, V& delta,D& data) = 0;// Initailizing the dlate_v domaim of statetable
+  virtual const V& default_v() const = 0;//Setting the "0" which satisfes the x ⊕"0"=x. ⊕is  operation such plus
+  virtual void init_v(const K& k, V& v, D& data) = 0;//Initializing the V domain of statetable
+  virtual void accumulate(V& a, const V& b) = 0;//Setting the manner of accumulating the delta_v,such as plus,Max(x,y),Min(x,y)
+  virtual void process_delta_v(const K& k, V& dalta,V& value, D& data){}//Processing the value of delta_v domain of statetable 
+  virtual void priority(V& pri, const V& value, const V& delta) = 0;//Setting the priority of statetable 
+  virtual void g_func(const K& k,const V& delta,const V& value, const D& data, vector<pair<K, V> >* output) = 0;// Implementation of Update operation of Maiter
 };
 
 
