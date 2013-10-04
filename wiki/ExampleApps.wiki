@@ -207,7 +207,7 @@ REGISTER_RUNNER(Adsorption);
 }}}
 
 
-== Katz metric ==
+= Katz metric =
 
 {{{
 #include "client/client.h"
