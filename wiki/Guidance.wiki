@@ -144,6 +144,8 @@ http://fmn.rrimg.com/fmn063/20130902/2120/original_wDhp_45b400007e12118e.jpg
   Figure 4
 
 Maiter can finish the third step without your interference. Therefore, you only need to finish the former two steps with the API provided by Maiter. Take PageRank for example. The C++ code of PageRank in Maiter programming model is shown below:
+
+== Implementation of PageRank ==
 {{{ 
 #include "client/client.h"
 using namespace dsm;
