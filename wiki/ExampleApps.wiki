@@ -315,7 +315,6 @@ REGISTER_RUNNER(Katz);
 
 using namespace dsm;
 
-//DECLARE_string(graph_dir);
 DECLARE_string(result_dir);
 DECLARE_int64(num_nodes);
 DECLARE_double(portion);
@@ -327,43 +326,32 @@ struct Simrankiterate : public IterateKernel<string, double, vector<vector<int> 
 
     void read_data(string& line, string& k, vector<vector<int> >& data){
         string linestr(line);
-        //cout<<"line:"<<line<<endl;
         int pos = linestr.find("\t");
         if(pos == -1) return;
         k=linestr.substr(0,pos);
         vector<vector<int> > linkvec;
         string remain=linestr.substr(pos+1);
-        //cout<<remain<<endl;
         int pos1=remain.find(" ");
         string I_ab=remain.substr(0,pos1);
-        //cout<<I_ab<<endl;
         int i_ab=boost::lexical_cast<int>(I_ab);
-        //cout<<i_ab<<endl;
         vector<int> tmp;
         tmp.push_back(i_ab);
         linkvec.push_back(tmp);
-        //cout<<linkvec[0][0]<<endl;
         pos=pos1;
         remain=remain.substr(pos+1);
-        //cout<<remain<<endl;
         pos1=remain.find("\t");
         string links_a=remain.substr(0,pos1);
         string links_b=remain.substr(pos1+1);
-        //cout<<links_a<<endl;
-        //cout<<links_b<<endl;
         if(links_a==""||links_b==""||links_a==" "||links_b==" "){
-            //cout<<"鍏ㄧ┖"<<endl;
             data = linkvec;
             return;
         }
         int spacepos = 0;
         vector<int> tmp_a;
-        //cout<<"link_a:"<<links_a<<endl;
         while((spacepos = links_a.find_first_of(" ")) != links_a.npos){
             int to;
             if(spacepos > 0){
                 to = boost::lexical_cast<int>(links_a.substr(0, spacepos));
-                //cout<<"to:"<<to<<endl;
             }
             links_a= links_a.substr(spacepos+1);
             tmp_a.push_back(to);
@@ -375,18 +363,15 @@ struct Simrankiterate : public IterateKernel<string, double, vector<vector<int> 
             int to;
             if(spacepos > 0){
                 to = boost::lexical_cast<int>(links_b.substr(0, spacepos));
-               // cout<<"to:"<<to<<endl;
             }
             links_b = links_b.substr(spacepos+1);
             tmp_b.push_back(to);
         }
         linkvec.push_back(tmp_b);
         data = linkvec;
-        //cout<<"read_data"<<endl;
     }
 
     void init_c(const string& k, double& delta,vector<vector<int> >& data){
-         // cout<<"int_c1"<<endl;
             string key=k;
             int pos=key.find("_");
             string key_a=key.substr(0,pos);
@@ -396,15 +381,12 @@ struct Simrankiterate : public IterateKernel<string, double, vector<vector<int> 
             }else{
                 delta=0;
             }
-           // cout<<"int_c"<<endl;
- 
                 
     } 
     void init_v(const string& k,double& v,vector<vector<int> >& data){
             v=0.0;
     }
     void process_delta_v(const string& k, double& delta, double& value, vector<vector<int> >& data){
-        //if(count==0) return;
         if(delta==0) return;
         int I_ab=boost::lexical_cast<int>(data[0][0]);
         if(I_ab==0)return;  
@@ -425,18 +407,14 @@ struct Simrankiterate : public IterateKernel<string, double, vector<vector<int> 
             }
             string key=k;
             count++;
-            //cout<<"v:"<<value<<endl;
             if(delta==0) return;
-            //count++;
             int I_ab=data[0][0];
             if(I_ab==0)return;
-            //cout<<"g_fuc_key"<<key<<endl;
             double outv = delta;
             int size_a=data[1].size();
             int size_b=data[2].size();
             if(size_a==0||size_b==0) return;
             vector<string> list;
-            //list.push_back(" ");
             for(vector<int>::const_iterator it_a=data[1].begin(); it_a!=data[1].end(); it_a++){
                 for(vector<int>::const_iterator it_b=data[2].begin(); it_b!=data[2].end(); it_b++){
                     int a= *it_a;
