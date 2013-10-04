@@ -228,7 +228,7 @@ new TermCheckers<int, float>::Diff // Setting the manner of stopping the task. Y
 // stating the task
 REGISTER_RUNNER(Pagerank); // Setting the parameter RUNNER in .sh file
 }}}
-*Secondly,* name your code file **.cc, for example, PageRank.cc and put PagRank.cc into src/examples/ directory of Maiter project. Then you need to modify the CMAKELIST.TXT file in src/examples/ directory. Note that , you must turn the rest .cc file into annotations, because Maiter only can compile one .cc file at the same time.
+*Secondly,* name your code file **.cc, for example, PageRank.cc and put PagRank.cc into src/examples/ directory of Maiter project. Then you need to modify the CMAKELIST.TXT file in src/examples/ directory.
 {{{
 set(EXAMPLE_LIBS 
 	${EXAMPLE_LIBS} 
@@ -238,13 +238,12 @@ set(EXAMPLE_LIBS
 set(EXAMPLE_LIBS ${EXAMPLE_LIBS} boost_thread-mt util z lzo2 pthread rt)
 add_custom_target(example_proto DEPENDS ${EXAMPLE_PB_HDR})
 add_library(example 
-            #con_component.cc
-            #simrank.cc
-            #sim.cc
             PageRank.cc
-            #shortestpath.cc
-            #adsorption.cc
-            #katz.cc
+            con_component.cc
+            simrank.cc
+            shortestpath.cc
+            adsorption.cc
+            katz.cc
             ${EXAMPLE_PB_HDR} 
             ${EXAMPLE_PB_SRC})
 add_dependencies(example worker_proto common_proto)
