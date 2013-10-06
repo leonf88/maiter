@@ -3,7 +3,7 @@
    * <a href="http://code.google.com/p/maiter/wiki/Guidance#Running_Maiter_on_single_machine">Running Maiter on single machine</a>
    * <a href="http://code.google.com/p/maiter/wiki/Guidance#Running_Maiter_on_a_cluster">Runing Maiter on cluster</a>
    * <a href="http://code.google.com/p/maiter/wiki/Guidance#Programing_on_Maiter">Programing on Maiter</a>
-
+   * <a href="http://code.google.com/p/maiter/wiki/Guidance#Some_common_problems">Somecommon problems</a>
 
 
 =*Running Maiter on single machine *=
