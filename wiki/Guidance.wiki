@@ -23,22 +23,8 @@ In addition to these, Maiter comes with several support libraries which are comp
  * google-flags
  * google-logging
 On debian/ubuntu, the required libraries can be acquired by running:
- * sudo apt-get install
- * build-essential
- * cmake
- * g++
- * libboost-dev
- * libboost-python-dev
- * libboost-thread-dev
- * liblzo2-dev
- * libnuma-dev
- * libblas-dev
- * libopenmpi-dev
- * libprotobuf-dev 
- * libcr-dev
- * libibverbs-dev
- * openmpi-bin
- * protobuf-compiler
+ * sudo apt-get install build-essential cmake g++ libboost-dev libboost-python-dev libboost-thread-dev liblzo2-dev libnuma-dev libopenmpi-dev libprotobuf-dev libcr-dev libibverbs-dev openmpi-bin protobuf-compiler liblapack-dev
+
 the optional libraries can be install via:
  * sudo apt-get install libgoogle-perftools-dev python-dev swig
 
