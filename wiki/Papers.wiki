@@ -1,0 +1,3 @@
+#summary Maiter related papers.
+
+ # Yanfeng Zhang, Qixin Gao, Lixin Gao, and Cuirong Wang, "Accelerate large-scale iterative computation through asynchronous accumulative updates", In _Proceedings of Workshop on Scientific Cloud Computing (ScienceCloud ‘12)_, 2012, pp.13-22.
