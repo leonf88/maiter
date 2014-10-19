@@ -1,7 +1,13 @@
 #summary Maiter related papers.
 
- # Yanfeng Zhang, Qixin Gao, Lixin Gao, and Cuirong Wang, "Accelerate large-scale iterative computation through asynchronous accumulative updates", In _Proceedings of Workshop on Scientific Cloud Computing (ScienceCloud 12)_, 2012, pp.13-22. [http://faculty.neu.edu.cn/cc/zhangyf/papers/maiter-sciencecloud.pdf pdf]
+ # Yanfeng Zhang, Qixin Gao, Lixin Gao, and Cuirong Wang, "PrIter: a distributed framework for prioritized iterative computations", In _Proceedings of ACM Symposium on Cloud Computing (SOCC '11)_, pp. 13:1—13:14, 2011. [http://faculty.neu.edu.cn/cc/zhangyf/papers/socc11-priter.pdf pdf]
+ # Yanfeng Zhang, Qixin Gao, Lixin Gao, and Cuirong Wang, "Accelerate large-scale iterative computation through asynchronous accumulative updates", In _Proceedings of Workshop on Scientific Cloud Computing (ScienceCloud '12)_, 2012, pp.13-22. [http://faculty.neu.edu.cn/cc/zhangyf/papers/maiter-sciencecloud.pdf pdf]
+ # 王春磊，张岩峰，赵长宽，于戈，Lixin Gao. Asyn-SimRank：一种异步执行的大规模 SimRank算法. _《计算机研究与发展》_, 2014. [http://faculty.neu.edu.cn/cc/zhangyf/papers/async-simrank-ccfbigdata.pdf pdf]
  # Yanfeng Zhang, Qixin Gao, Lixin Gao, and Cuirong Wang, "Maiter: An Asynchronous Graph Processing Framework for Delta-based Accumulative Iterative Computation", _IEEE Transactions on Parallel and Distributed Systems (TPDS)_, 2014. [http://faculty.neu.edu.cn/cc/zhangyf/papers/maiter.pdf pdf]
- # Yanfeng Zhang, Qixin Gao, Lixin Gao, and Cuirong Wang, "PrIter: a distributed framework for prioritized iterative computations", In _Proceedings of ACM Symposium on Cloud Computing (SOCC 2011)_, pp. 13:1—13:14, 2011. [http://faculty.neu.edu.cn/cc/zhangyf/papers/socc11-priter.pdf pdf]
- # Dong Chang, Yanfeng Zhang, and Ge Yu, "MaiterStore: A Hot-aware, High-Performance Key-Value Store for Graph Processing", In _Proceedings of Second International DASFAA Workshop on Big Data Management and Analytics (BDMA 2014)_, 2014.
- # 王春磊，张岩峰，赵长宽，于戈，Lixin Gao. Asyn-SimRank：一种异步执行的大规模 SimRank算法. _第一届大数据学术会议_, 2013. [http://faculty.neu.edu.cn/cc/zhangyf/papers/async-simrank-ccfbigdata.pdf pdf]
+ # Samamon Khemmarat, Lixin Gao, "Fast Top-K Path-based Relevance Query on Massive Graphs", in _Proceedings of IEEE International Conference on Data Engineering (ICDE '14)_, 2014.
+[http://rio.ecs.umass.edu/mnilpub/papers/icde2014-samamon.pdf pdf]
+ # Jiangtao Yin, Lixin Gao, Zhongfei (Mark) Zhang, "Scalable Nonnegative Matrix Factorization with Block-wise Updates", in _Proceedings of the European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML/PKDD '14)_, 2014.
+[http://rio.ecs.umass.edu/mnilpub/papers/ecmlpkdd2014-yin.pdf pdf]
+ # Jiangtao Yin, Lixin Gao, "Scalable Distributed Belief Propagation with Prioritized Block Updates", in _Proceeding of ACM International Conference on Information and Knowledge Management (CIKM '14)_, 2014.
+[http://rio.ecs.umass.edu/mnilpub/papers/cikm2014-yin.pdf pdf]
+ # Dong Chang, Yanfeng Zhang, and Ge Yu, "MaiterStore: A Hot-aware, High-Performance Key-Value Store for Graph Processing", In _Proceedings of Second International DASFAA Workshop on Big Data Management and Analytics (BDMA '14)_, 2014.
